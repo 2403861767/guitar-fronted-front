@@ -1,10 +1,13 @@
 import {createRouter, createWebHashHistory} from "vue-router";
-import Index from "../views/Index.vue";
+import Index from "../views/IndexPage.vue";
 import BaseLayout from "../layouts/BaseLayout.vue"
 // 2. 定义一些路由
 const routes = [
-    {path: '/', component: BaseLayout},
-    {path: '/s', component: Index},
+    {
+        path: '/',component: BaseLayout, children: [
+            {path: '/index', component: Index},
+        ],redirect:'/index'
+    },
 ]
 
 // 3. 创建路由实例并传递 `routes` 配置

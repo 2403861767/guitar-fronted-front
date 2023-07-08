@@ -10,14 +10,26 @@
                         mode="horizontal"
                         :style="{ lineHeight: '64px' }"
                 >
-                    <a-menu-item key="1">nav 1</a-menu-item>
-                    <a-menu-item key="2">nav 2</a-menu-item>
-                    <a-menu-item key="3">nav 3</a-menu-item>
+                    <a-menu-item key="1">首页</a-menu-item>
+                    <a-menu-item key="2">吉他谱</a-menu-item>
+                    <a-menu-item key="3">歌手</a-menu-item>
                 </a-menu>
             </a-layout-header>
 <!--            内容-->
-            <a-layout-content :style="{ padding: '0 50px', marginTop: '64px' }">
-                <div :style="{ background: '#fff', padding: '24px', minHeight: '380px', marginTop: '5rem' }">Content</div>
+            <a-layout-content :style="{ padding: '0 50px', marginTop: '64px',marginLeft: '12rem',marginRight: '12rem' }">
+<!--                搜索框-->
+                <div style="margin-top: 3rem;">
+                    <a-input-search
+                            v-model:value="value"
+                            placeholder="input search text"
+                            enter-button
+                            @search="onSearch"
+                    />
+                </div>
+                <div :style="{ padding: '24px', minHeight: '100vh', marginTop: '3rem',border:'2px solid' }">
+                  <!--content-->
+                    <router-view />
+                </div>
             </a-layout-content>
 <!--            尾部footer-->
             <a-layout-footer :style="{ textAlign: 'center' }">
