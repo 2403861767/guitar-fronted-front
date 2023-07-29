@@ -2,7 +2,7 @@
     <div>
         <a-layout>
 <!--            头部-->
-            <a-layout-header :style="{ position: 'fixed', zIndex: 1, width: '100%' }">
+            <a-layout-header :style="{ position: 'fixed', zIndex: 100, width: '100%' }">
                 <div class="logo"/>
                 <a-menu
                         v-model:selectedKeys="selectedKeys"
@@ -16,7 +16,7 @@
                 </a-menu>
             </a-layout-header>
 <!--            内容-->
-            <a-layout-content :style="{ padding: '0 50px', marginTop: '64px',marginLeft: '12rem',marginRight: '12rem' }">
+            <a-layout-content :style="{ padding: '0 50px', marginTop: '64px',marginLeft: '10rem',marginRight: '10rem' }">
 <!--                搜索框-->
                 <div style="margin-top: 3rem;">
                     <a-input-search
@@ -26,7 +26,7 @@
                             @search="onSearch"
                     />
                 </div>
-                <div :style="{ padding: '24px', minHeight: '100vh', marginTop: '3rem',border:'2px solid' }">
+                <div :style="{  minHeight: '100vh', marginTop: '3rem',border:'2px solid' }">
                   <!--content-->
                     <router-view />
                 </div>

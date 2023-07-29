@@ -6,6 +6,7 @@ import 'ant-design-vue/dist/reset.css';
 import Antd from 'ant-design-vue';
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
+import './assets/icons/iconfont.js'
 // 5. 创建并挂载根实例
 const app = createApp(App)
 //确保 _use_ 路由实例使
