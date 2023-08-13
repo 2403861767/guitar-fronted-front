@@ -18,6 +18,21 @@
                 </div>
             </div>
         </div>
+<!--曲谱推荐-->
+        <div class="recommend">
+            <p class="title">曲谱推荐</p>
+            <div class="items">
+<!--                TODO -->
+                <div style="display: flex; justify-content: space-between;flex-wrap: wrap;">
+                    <song-card  style="width: 33%;margin-top: 5px;" />
+                    <song-card  style="width: 33%;margin-top: 5px;" />
+                    <song-card  style="width: 33%;margin-top: 5px;" />
+                    <song-card  style="width: 33%;margin-top: 5px;" />
+                    <song-card  style="width: 33%;margin-top: 5px;" />
+                    <song-card  style="width: 33%;margin-top: 5px;" />
+                </div>
+            </div>
+        </div>
 
 
     </div>
@@ -26,6 +41,7 @@
 <script lang="ts" setup>
 import {reactive} from "vue";
 import SvgIcon from "../components/SvgIcon.vue";
+import SongCard from "../components/SongCard.vue";
 
 const onChange = (current: number) => {
     console.log(current);
@@ -58,6 +74,17 @@ const guides = reactive([
 </script>
 
 <style scoped>
+/* recommend */
+.recommend .title{
+    color: #272727;
+    font-size: 28px;
+    font-weight: 700;
+    margin-top: 88px;
+    text-align: center;
+    position: relative;
+    letter-spacing: 18px;
+}
+
 /*  guide   */
 .guide .item{
     width: 32%;
