@@ -23,13 +23,11 @@
             <p class="title">曲谱推荐</p>
             <div class="items">
 <!--                TODO -->
-                <div style="display: flex; justify-content: space-between;flex-wrap: wrap;">
-                    <song-card  style="width: 33%;margin-top: 5px;" />
-                    <song-card  style="width: 33%;margin-top: 5px;" />
-                    <song-card  style="width: 33%;margin-top: 5px;" />
-                    <song-card  style="width: 33%;margin-top: 5px;" />
-                    <song-card  style="width: 33%;margin-top: 5px;" />
-                    <song-card  style="width: 33%;margin-top: 5px;" />
+                <div >
+<!--                    style="display: flex; justify-content: space-between;flex-wrap: wrap;"-->
+<!--                    <song-card :song-list="songList"  style="width: 33%;margin-top: 5px;" />-->
+                    <song-card :song-list="songList"   />
+
                 </div>
             </div>
         </div>
@@ -39,9 +37,24 @@
 </template>
 
 <script lang="ts" setup>
-import {reactive} from "vue";
+import {reactive, ref, watchEffect} from "vue";
 import SvgIcon from "../components/SvgIcon.vue";
 import SongCard from "../components/SongCard.vue";
+import myAxios from "../plugins/myAxios.ts";
+
+// 推荐曲谱
+const songList = ref([])
+const recommendData = async () => {
+    let songListData;
+    const res =await myAxios.post('/music/recommend')
+    songListData = res.data
+    songList.value = songListData
+}
+watchEffect(() => {
+    recommendData()
+})
+
+
 
 const onChange = (current: number) => {
     console.log(current);
