@@ -31,7 +31,19 @@
                 </div>
             </div>
         </div>
-
+<!--热门歌手-->
+        <div class="hotSinger">
+            <p class="title">热门歌手
+                <a href="" class="more">更多
+                    <el-icon :size="20">
+                        <Right />
+                    </el-icon>
+                </a>
+            </p>
+            <div class="items">
+                <singer-card />
+            </div>
+        </div>
 
     </div>
 </template>
@@ -41,6 +53,7 @@ import {reactive, ref, watchEffect} from "vue";
 import SvgIcon from "../components/SvgIcon.vue";
 import SongCard from "../components/SongCard.vue";
 import myAxios from "../plugins/myAxios.ts";
+import SingerCard from "../components/SingerCard.vue";
 
 // 推荐曲谱
 const songList = ref([])
@@ -87,6 +100,31 @@ const guides = reactive([
 </script>
 
 <style scoped>
+/*hotSinger*/
+.hotSinger .title{
+    color: #272727;
+    font-size: 28px;
+    font-weight: 700;
+    margin-top: 88px;
+    text-align: center;
+    position: relative;
+    letter-spacing: 18px;
+}
+.hotSinger .title .more{
+    font-size: 14px;
+    color: inherit;
+    letter-spacing: 2px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
 /* recommend */
 .recommend .title{
     color: #272727;
